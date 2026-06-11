@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tax Invoice CE-INV-2026-082 — ABB Power Grids Pvt Ltd</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e9ebf2;
+    color: #1a1b25;
+    padding: 24px;
+    font-size: 13px;
+  }
+  .sheet {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #c7c9d6;
+    padding: 32px 36px;
+  }
+  .letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #ED1C24;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+  }
+  .letterhead .brand {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #ED1C24;
+  }
+  .letterhead .brand span { color: #1a1b25; }
+  .letterhead .brand-sub {
+    font-size: 11px;
+    color: #6B7280;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+  .letterhead .meta {
+    text-align: right;
+    font-size: 11.5px;
+    color: #4b4d5c;
+    line-height: 1.6;
+  }
+  .doc-title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    margin: 14px 0 18px;
+    text-transform: uppercase;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid #c7c9d6;
+    margin-bottom: 14px;
+  }
+  .meta-grid > div {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e2e4ed;
+    border-right: 1px solid #e2e4ed;
+  }
+  .meta-grid > div:nth-child(2n) { border-right: none; }
+  .meta-grid > div:nth-last-child(-n+2) { border-bottom: none; }
+  .meta-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6B7280;
+    margin-bottom: 3px;
+  }
+  .meta-value { font-weight: 600; }
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .party-box {
+    border: 1px solid #c7c9d6;
+    padding: 12px 14px;
+  }
+  .party-box h4 {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6B7280;
+    margin-bottom: 6px;
+  }
+  .party-box .name { font-weight: 700; margin-bottom: 4px; }
+  .party-box .addr { line-height: 1.6; color: #3c3d49; }
+  .party-box .gstin { margin-top: 6px; font-weight: 600; }
+  table.items {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 14px;
+  }
+  table.items th, table.items td {
+    border: 1px solid #c7c9d6;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  table.items th {
+    background: #f3f4f9;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: #4b4d5c;
+    text-align: left;
+  }
+  table.items td.num, table.items th.num { text-align: right; }
+  .summary-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+  table.summary {
+    border-collapse: collapse;
+    width: 320px;
+  }
+  table.summary td {
+    padding: 6px 10px;
+    font-size: 12.5px;
+    border-bottom: 1px solid #e2e4ed;
+  }
+  table.summary td:last-child { text-align: right; font-weight: 600; }
+  table.summary tr.total td {
+    border-top: 2px solid #1a1b25;
+    border-bottom: none;
+    font-weight: 800;
+    font-size: 14px;
+    padding-top: 8px;
+  }
+  .words {
+    font-size: 12.5px;
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    background: #f7f8fb;
+    border: 1px solid #e2e4ed;
+  }
+  .words strong { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #6B7280; margin-bottom: 3px; }
+  .tds-note {
+    border: 1px solid #f3c89a;
+    background: #fff8ef;
+    padding: 10px 14px;
+    font-size: 12px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  .tds-note strong { color: #b45309; }
+  .bank-and-terms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .bank-and-terms .box {
+    border: 1px solid #c7c9d6;
+    padding: 12px 14px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .bank-and-terms h4 {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6B7280;
+    margin-bottom: 6px;
+  }
+  .signature {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+  }
+  .signature .box {
+    width: 220px;
+  }
+  .signature .line {
+    margin-top: 46px;
+    border-top: 1px solid #1a1b25;
+    padding-top: 6px;
+    font-size: 11.5px;
+    color: #4b4d5c;
+  }
+  .footer-note {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 10.5px;
+    color: #9CA3AF;
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .sheet { border: none; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="letterhead">
+      <div>
+        <div class="brand">ABB <span>Power Grids Pvt Ltd</span></div>
+        <div class="brand-sub">Plot No. 38-39, Peenya Industrial Area, 4th Phase, Bengaluru, Karnataka – 560058, India</div>
+        <div class="brand-sub">GSTIN: 29AABCA9821F1Z2 &nbsp;|&nbsp; PAN: AABCA9821F &nbsp;|&nbsp; CIN: U31200KA1995PTC018452</div>
+      </div>
+      <div class="meta">
+        Email: ar.billing@abbpowergrids-india.example<br/>
+        Phone: +91 80 4567 8900<br/>
+        State: Karnataka (29)
+      </div>
+    </div>
+
+    <div class="doc-title">Tax Invoice</div>
+
+    <div class="meta-grid">
+      <div>
+        <div class="meta-label">Invoice No.</div>
+        <div class="meta-value">CE-INV-2026-082</div>
+      </div>
+      <div>
+        <div class="meta-label">Invoice Date</div>
+        <div class="meta-value">15-May-2026</div>
+      </div>
+      <div>
+        <div class="meta-label">Purchase Order Ref.</div>
+        <div class="meta-value">PO-CE-2026-0398 dated 15-Jan-2026</div>
+      </div>
+      <div>
+        <div class="meta-label">Payment Terms</div>
+        <div class="meta-value">Net 45 Days (Due 29-Jun-2026)</div>
+      </div>
+      <div>
+        <div class="meta-label">Place of Supply</div>
+        <div class="meta-value">Karnataka (29)</div>
+      </div>
+      <div>
+        <div class="meta-label">Reverse Charge Applicable</div>
+        <div class="meta-value">No</div>
+      </div>
+    </div>
+
+    <div class="parties">
+      <div class="party-box">
+        <h4>Billed By</h4>
+        <div class="name">ABB Power Grids Pvt Ltd</div>
+        <div class="addr">Plot No. 38-39, Peenya Industrial Area,<br/>4th Phase, Bengaluru, Karnataka – 560058</div>
+        <div class="gstin">GSTIN: 29AABCA9821F1Z2</div>
+      </div>
+      <div class="party-box">
+        <h4>Billed To</h4>
+        <div class="name">Continuum Energy Limited</div>
+        <div class="addr">Karnataka Project Office, Survey No. 145,<br/>Pavagada Solar Park, Tumkur District, Karnataka – 561202</div>
+        <div class="gstin">GSTIN: 29AABCC4521D1Z5</div>
+      </div>
+    </div>
+
+    <table class="items">
+      <thead>
+        <tr>
+          <th style="width:6%">#</th>
+          <th>Description of Service</th>
+          <th style="width:10%">SAC Code</th>
+          <th style="width:8%" class="num">Qty</th>
+          <th style="width:14%" class="num">Rate (₹)</th>
+          <th style="width:14%" class="num">Amount (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Transformer Annual O&amp;M Service Contract — Apr 2026 to Sep 2026 (H1 FY27 Billing Cycle)</td>
+          <td>998719</td>
+          <td class="num">1 Lot</td>
+          <td class="num">6,94,915.25</td>
+          <td class="num">6,94,915.25</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Emergency Call-Out &amp; Spares Replacement — 3 visits (Out-of-scope, ref. site memo SM-114)</td>
+          <td>998719</td>
+          <td class="num">1 Lot</td>
+          <td class="num">1,31,779.67</td>
+          <td class="num">1,31,779.67</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="summary-wrap">
+      <table class="summary">
+        <tr><td>Taxable Value</td><td>₹ 8,26,694.92</td></tr>
+        <tr><td>CGST @ 9%</td><td>₹ 74,402.54</td></tr>
+        <tr><td>SGST @ 9%</td><td>₹ 74,402.54</td></tr>
+        <tr><td>Round Off</td><td>₹ 0.00</td></tr>
+        <tr class="total"><td>Total Invoice Value</td><td>₹ 9,75,500.00</td></tr>
+      </table>
+    </div>
+
+    <div class="words">
+      <strong>Amount in Words</strong>
+      Rupees Nine Lakh Seventy-Five Thousand Five Hundred Only
+    </div>
+
+    <div class="tds-note">
+      <strong>TDS Note:</strong> Buyer to deduct TDS under Section 194C @ 2% on taxable value of ₹8,26,694.92 = <strong>₹16,533.90</strong>.
+      Net payable after TDS: <strong>₹9,58,966.10</strong>. (Per Master Service Agreement clause 14.3, O&amp;M service contracts above ₹5,00,000 attract TDS @ 10% — please verify applicable rate before remittance.)
+    </div>
+
+    <div class="bank-and-terms">
+      <div class="box">
+        <h4>Bank Details</h4>
+        Bank Name: HDFC Bank Ltd<br/>
+        Branch: Peenya Industrial Estate, Bengaluru<br/>
+        Account Name: ABB Power Grids Pvt Ltd<br/>
+        Account No.: 5020 0123 4567 8<br/>
+        IFSC Code: HDFC0001234
+      </div>
+      <div class="box">
+        <h4>Terms &amp; Notes</h4>
+        Goods/services once invoiced will not be taken back.<br/>
+        Interest @ 18% p.a. will be charged on overdue payments.<br/>
+        Subject to Bengaluru jurisdiction only.
+      </div>
+    </div>
+
+    <div class="signature">
+      <div class="box">
+        <div class="line">Authorized Signatory<br/>ABB Power Grids Pvt Ltd</div>
+      </div>
+    </div>
+
+    <div class="footer-note">This is a system-generated sample document created for the InvoiceIQ demo. Not a real transaction.</div>
+  </div>
+</body>
+</html>

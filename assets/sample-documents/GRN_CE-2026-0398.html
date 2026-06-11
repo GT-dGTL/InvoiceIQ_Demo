@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Goods Receipt Note GRN-CE-2026-0398 — Continuum Energy Limited</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e9ebf2;
+    color: #1a1b25;
+    padding: 24px;
+    font-size: 13px;
+  }
+  .sheet {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #c7c9d6;
+    padding: 32px 36px;
+  }
+  .letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #364866;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+  }
+  .letterhead .brand {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: #364866;
+  }
+  .letterhead .brand span { color: #1a1b25; }
+  .letterhead .brand-sub {
+    font-size: 11px;
+    color: #6B7280;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+  .letterhead .meta {
+    text-align: right;
+    font-size: 11.5px;
+    color: #4b4d5c;
+    line-height: 1.6;
+  }
+  .doc-title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    margin: 14px 0 18px;
+    text-transform: uppercase;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid #c7c9d6;
+    margin-bottom: 14px;
+  }
+  .meta-grid > div {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e2e4ed;
+    border-right: 1px solid #e2e4ed;
+  }
+  .meta-grid > div:nth-child(2n) { border-right: none; }
+  .meta-grid > div:nth-last-child(-n+2) { border-bottom: none; }
+  .meta-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6B7280;
+    margin-bottom: 3px;
+  }
+  .meta-value { font-weight: 600; }
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .party-box {
+    border: 1px solid #c7c9d6;
+    padding: 12px 14px;
+  }
+  .party-box h4 {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6B7280;
+    margin-bottom: 6px;
+  }
+  .party-box .name { font-weight: 700; margin-bottom: 4px; }
+  .party-box .addr { line-height: 1.6; color: #3c3d49; }
+  .party-box .gstin { margin-top: 6px; font-weight: 600; }
+  table.items {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 14px;
+  }
+  table.items th, table.items td {
+    border: 1px solid #c7c9d6;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  table.items th {
+    background: #f3f4f9;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: #4b4d5c;
+    text-align: left;
+  }
+  table.items td.num, table.items th.num { text-align: right; }
+  .summary-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+  table.summary {
+    border-collapse: collapse;
+    width: 320px;
+  }
+  table.summary td {
+    padding: 6px 10px;
+    font-size: 12.5px;
+    border-bottom: 1px solid #e2e4ed;
+  }
+  table.summary td:last-child { text-align: right; font-weight: 600; }
+  table.summary tr.total td {
+    border-top: 2px solid #1a1b25;
+    border-bottom: none;
+    font-weight: 800;
+    font-size: 14px;
+    padding-top: 8px;
+  }
+  .inspection-box {
+    border: 1px solid #bfe3cf;
+    background: #f1fbf6;
+    padding: 12px 14px;
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .inspection-box h4 {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #0E7C66;
+    margin-bottom: 6px;
+  }
+  .inspection-box .status-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #0E7C66;
+  }
+  .inspection-box .status-row .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10B981;
+    display: inline-block;
+  }
+  .checklist {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .checklist li {
+    padding: 3px 0 3px 22px;
+    position: relative;
+  }
+  .checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0E7C66;
+    font-weight: 800;
+  }
+  .signature-row {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 36px;
+  }
+  .signature-row .box { width: 220px; }
+  .signature-row .line {
+    margin-top: 46px;
+    border-top: 1px solid #1a1b25;
+    padding-top: 6px;
+    font-size: 11.5px;
+    color: #4b4d5c;
+  }
+  .footer-note {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 10.5px;
+    color: #9CA3AF;
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .sheet { border: none; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="letterhead">
+      <div>
+        <div class="brand">Continuum <span>Energy Limited</span></div>
+        <div class="brand-sub">Karnataka Project Office, Survey No. 145, Pavagada Solar Park, Tumkur District, Karnataka – 561202, India</div>
+        <div class="brand-sub">GSTIN: 29AABCC4521D1Z5 &nbsp;|&nbsp; Department: Site O&amp;M / Stores</div>
+      </div>
+      <div class="meta">
+        Email: stores.pavagada@continuumenergy-india.example<br/>
+        Phone: +91 81 6622 4411<br/>
+        State: Karnataka (29)
+      </div>
+    </div>
+
+    <div class="doc-title">Goods / Service Receipt Note</div>
+
+    <div class="meta-grid">
+      <div>
+        <div class="meta-label">GRN No.</div>
+        <div class="meta-value">GRN-CE-2026-0398</div>
+      </div>
+      <div>
+        <div class="meta-label">GRN Date</div>
+        <div class="meta-value">10-May-2026</div>
+      </div>
+      <div>
+        <div class="meta-label">Against PO</div>
+        <div class="meta-value">PO-CE-2026-0398 dated 15-Jan-2026</div>
+      </div>
+      <div>
+        <div class="meta-label">Billing Cycle</div>
+        <div class="meta-value">H1 FY27 (Apr 2026 – Sep 2026)</div>
+      </div>
+      <div>
+        <div class="meta-label">Receiving Location</div>
+        <div class="meta-value">Pavagada Solar Park, Tumkur District, Karnataka</div>
+      </div>
+      <div>
+        <div class="meta-label">Received Via</div>
+        <div class="meta-value">On-site Service Completion</div>
+      </div>
+    </div>
+
+    <div class="parties">
+      <div class="party-box">
+        <h4>Received From (Vendor)</h4>
+        <div class="name">ABB Power Grids Pvt Ltd</div>
+        <div class="addr">Plot No. 38-39, Peenya Industrial Area,<br/>4th Phase, Bengaluru, Karnataka – 560058</div>
+        <div class="gstin">GSTIN: 29AABCA9821F1Z2</div>
+      </div>
+      <div class="party-box">
+        <h4>Received By (Site)</h4>
+        <div class="name">Continuum Energy Limited</div>
+        <div class="addr">Karnataka Project Office, Survey No. 145,<br/>Pavagada Solar Park, Tumkur District, Karnataka – 561202</div>
+        <div class="gstin">GSTIN: 29AABCC4521D1Z5</div>
+      </div>
+    </div>
+
+    <table class="items">
+      <thead>
+        <tr>
+          <th style="width:6%">#</th>
+          <th>Description of Service Received</th>
+          <th style="width:10%">SAC Code</th>
+          <th style="width:8%" class="num">Qty</th>
+          <th style="width:14%" class="num">Rate (₹)</th>
+          <th style="width:14%" class="num">Amount (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Transformer Annual O&amp;M Service — H1 FY27 (Apr 2026 to Sep 2026), per scope of work Annexure A. 2 of 2 scheduled preventive maintenance visits completed.</td>
+          <td>998719</td>
+          <td class="num">1 Lot</td>
+          <td class="num">6,94,915.25</td>
+          <td class="num">6,94,915.25</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="summary-wrap">
+      <table class="summary">
+        <tr><td>Taxable Value</td><td>₹ 6,94,915.25</td></tr>
+        <tr><td>CGST @ 9%</td><td>₹ 62,542.37</td></tr>
+        <tr><td>SGST @ 9%</td><td>₹ 62,542.37</td></tr>
+        <tr><td>Round Off</td><td>₹ 0.01</td></tr>
+        <tr class="total"><td>Total Value Received</td><td>₹ 8,20,000.00</td></tr>
+      </table>
+    </div>
+
+    <div class="inspection-box">
+      <h4>Inspection &amp; Acceptance</h4>
+      <div class="status-row"><span class="dot"></span> Accepted in Full — No Discrepancies Noted</div>
+      <ul class="checklist">
+        <li>Scope of work matches PO-CE-2026-0398, Annexure A (preventive maintenance only).</li>
+        <li>Both scheduled visits for the H1 FY27 cycle completed and verified on-site.</li>
+        <li>No additional, emergency, or out-of-scope works recorded against this PO during this period.</li>
+        <li>Quantity and value received conform to PO terms — no over-delivery or short-delivery.</li>
+      </ul>
+    </div>
+
+    <div class="signature-row">
+      <div class="box">
+        <div class="line">Received By<br/>Site Stores Officer, Pavagada</div>
+      </div>
+      <div class="box">
+        <div class="line">Verified By<br/>O&amp;M Site Engineer, Pavagada</div>
+      </div>
+    </div>
+
+    <div class="footer-note">This is a system-generated sample document created for the InvoiceIQ demo. Not a real transaction.</div>
+  </div>
+</body>
+</html>
