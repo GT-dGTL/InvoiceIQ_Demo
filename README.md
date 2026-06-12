@@ -10,6 +10,70 @@ client through the experience of "AI-assisted invoice review" end-to-end.
 
 ---
 
+## The problem
+
+Accounts Payable (AP) teams at large enterprises process a high volume of
+vendor invoices every month, and most of that review is still manual:
+
+- Every invoice has to be **cross-checked against its Purchase Order and
+  Goods Receipt Note** (a 3-way match) to catch overbilling, out-of-scope
+  charges, or duplicate payments — typically done line-by-line by hand.
+- **GST and TDS compliance** (correct GSTIN, correct deduction rates) is
+  verified manually, with mistakes carrying real regulatory and financial
+  penalties.
+- Invoices arrive via email/portals with no central queue, so AP staff lack
+  visibility into what's pending, what's blocked on missing documents, and
+  what's at risk of breaching payment SLAs.
+- Because review is manual and inconsistent, **discrepancies are often
+  caught after payment has already gone out**, when recovery is far harder.
+- Clean, low-risk invoices wait in the same queue as problem invoices,
+  slowing down payments to good vendors and straining vendor relationships.
+
+## The impact
+
+InvoiceIQ demonstrates how an AI-assisted AP workflow changes this picture:
+
+- **Straight-through processing (STP)** for clean invoices — invoices that
+  pass every automated check move directly to the payment queue with no
+  human touch, so AP staff only spend time on exceptions.
+- **Lower compliance risk** — GST/GSTIN validity and TDS deduction rates are
+  checked against statutory requirements *before* payment, not after.
+- **Reduced financial leakage** — automated 3-way matching flags amount
+  mismatches between Invoice, PO, and GRN (e.g., overbilling, duplicate or
+  out-of-scope line items) before money leaves the business.
+- **Faster, more predictable payment cycles** — a single prioritized queue
+  (SLA Watch, Document Blockers, Pattern Watch) gives AP teams a clear view
+  of what needs attention and why, improving vendor satisfaction.
+- **Better audit trail** — every decision (approve, reject, request
+  documents) carries a plain-language AI rationale explaining *why*,
+  supporting internal controls and audit reviews.
+
+## How it works
+
+InvoiceIQ models a 6-stage AI agent pipeline that mirrors how a real AP
+automation platform would process an invoice end-to-end:
+
+1. **Invoice Receiver** — ingests the invoice, PO, and GRN documents for a claim.
+2. **Validation Agent** — performs the 3-way match, comparing invoice line
+   items and amounts against the PO and GRN.
+3. **Compliance Officer** — checks GST/GSTIN validity and TDS deduction
+   rates against statutory requirements.
+4. **Anomaly Agent** — scans for unusual patterns such as out-of-scope
+   items, amount overages, or due-date issues.
+5. **Decision Gate** — combines the results of all checks to decide whether
+   the invoice qualifies for Straight-Through Processing or needs human review.
+6. **Payment Scheduler** — for approved invoices, schedules payment and adds
+   the claim to the Payment Queue.
+
+Each check produces a **PASS / FAIL / WARNING** result plus a plain-language
+rationale, shown to the AP reviewer in the claim detail view — so they see
+not just *what* was flagged, but *why*, and can **Approve**, **Reject**, or
+**Request Documents** with a single click. Approved/STP claims flow into the
+Payment Queue automatically, and the dashboard's stats and insight cards
+update live as decisions are made.
+
+---
+
 ## ⚠️ Important: This is a simulation, not a real AI product
 
 This demo intentionally contains **no real AI, ML, or backend logic**:
